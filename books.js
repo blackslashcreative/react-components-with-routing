@@ -9,17 +9,17 @@ class Book extends HTMLElement {
     const description   = this.getAttribute('description');
 
     this.innerHTML = `
-      <div class="card">
+      <div class="card mt-3">
         <h5 class="card-header">${title}</h5>
         <div class="card-body">
           <p class="card-text">
           <table class="table">
             <tr>
-              <td class="text-success font-weight-bold">Author:</td>
+              <td class="font-weight-bold">Author:</td>
               <td>${author}</td>
             </tr>
             <tr>
-            <td class="text-success font-weight-bold">Description:</td>
+            <td class="font-weight-bold">Description:</td>
               <td>${description}</td>
             </tr>
           </table>

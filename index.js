@@ -10,7 +10,7 @@ function App(){
       setLoaded(true);
     }
     getData();
-  }, []);
+  }, [loaded]);
   console.log('loaded: ', loaded, 'data: ', data);
 
   return(<>
