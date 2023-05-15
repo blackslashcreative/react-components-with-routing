@@ -14,6 +14,7 @@ function App(){
   console.log('loaded: ', loaded, 'data: ', data);
 
   return(<>
+    <Navbar />
     <div className="container mt-3">
       <h1>React Components</h1>
       {loaded && data.books.map((book,i) => <mit-book 
