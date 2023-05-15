@@ -14,9 +14,8 @@ function App(){
   console.log('loaded: ', loaded, 'data: ', data);
 
   return(<>
-    <Navbar />
-    <div className="container mt-3">
-      <h1>React Components</h1>
+    <Navbar/>
+    <div id="content" className="container mt-5">
       {loaded && data.books.map((book,i) => <mit-book 
       title={book.title}
       author={book.author}

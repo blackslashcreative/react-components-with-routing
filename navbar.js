@@ -1,10 +1,26 @@
-function Navbar(){
+function Navbar({page}){
+
+  async function loadPage() {
+    // get the requested page 
+    let page = location.hash.replace('#','');
+    // fetch the page, use await
+    const res = await fetch(page);
+    // get text from res, use await
+    const content = await res.text();
+    // get the element with id 'content'
+    const element = document.getElementById('content');
+    // set innerHTML of the element
+    element.innerHTML = content;
+  }
+
+  window.addEventListener('hashchange', loadPage);
+
   return(
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">My Books</a>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="">My Books</a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -12,12 +28,11 @@ function Navbar(){
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="navbar-nav mr-auto mb-2 mb-lg-0">
-            <a class="nav-item nav-link" id="signin_link" onclick="loadPage('signin.html')" href="#">Sign In</a>
-            <a class="nav-item nav-link" id="books_link"  onclick="loadPage('index.html')"  href="#">Books</a>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="navbar-nav mr-auto mb-2 mb-lg-0">
+            <a className="nav-item nav-link" id="signin_link" href="#signin">Sign In</a>
           </div>
         </div>
       </div>
